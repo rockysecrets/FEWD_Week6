@@ -7,27 +7,78 @@ var computerScore = 0;
 //depending on being passed an argument string for "rock", "paper",
 //or "scissors" - the human user choice
 function play(humanPlay) {
+
   //call the return functio to get a random 'bot' choice
   var computerPlay = getComputerPlay();
+  var plays, play;
 
-  //update the #status to display who played what
-  //use jQuery .html()
+  return play;
+}
 
-  //write a conditional block for a human "rock" choice
-  //this will have a nested conditional for the "computer" choice
-  //use jQuery .append()
+var plays = ["rock", "paper", "scissors"];
+var i = Math.floor(Math.random() * plays.length);
+var play = plays[i];
 
+//update the #status to display who played what
+//use jQuery .html()
 
-  //write a conditional block for a human "paper" choice
-  //this will have a nested conditional for the "computer" choice
-  //use jQuery .append()
+$("#status").html("You selected " + humanPlay + ". The bot selected " + computerPlay + "");
 
-  //write a conditional block for a human "scissors" choice
-  //this will have a nested conditional for the "computer" choice
-  //use jQuery .append()
+//write a conditional block for a human "rock" choice
+//this will have a nested conditional for the "computer" choice
+//use jQuery .append() to update the #status
 
-  //update the #humanScore and #computerScore elements
-  //use jQuery .html()
+//write a conditional block for a human "paper" choice
+//this will have a nested conditional for the "computer" choice
+//use jQuery .append()
+
+//write a conditional block for a human "scissors" choice
+//this will have a nested conditional for the "computer" choice
+//use jQuery .append()
+
+//update the #humanScore and #computerScore elements
+//use jQuery .html()
+if (humanPlay === "rock") {
+
+  if (computerPlay === "rock") {
+    // tie
+    $('status').append("You Tie!");
+  } else if (computerPlay === "paper") {
+    // human lose
+    $('status').append("You Lose!");
+    computerScore++;
+  } else if (computerPlay === "scissors") {
+    // human wins
+    $('status').append("You win!");
+    humanScore++;
+  }
+} else if (humanPlay === "paper") {
+
+  if (computerPlay === "rock") {
+    // win
+    $('status').append("You win!");
+    humanScore++;
+  } else if (computerPlay === "paper") {
+    // tie
+    $('status').append("You Tied!");
+  } else if (computerPlay === "scissors") {
+    // lose
+    $('status').append("You Lose!");
+    computerScore++;
+  }
+} else if (humanPlay === "scissors") {
+  if (computerPlay === "rock") {
+    // lose
+    $('status').append("You Lose!");
+    computerScore++;
+  } else if (computerPlay === "paper") {
+    // win
+    $('status').append("You win!");
+    humanScore++;
+  } else if (computerPlay === "scissors") {
+    // tie
+    $('status').append("You Tie!");
+  }
 
 }
 
@@ -35,8 +86,11 @@ function play(humanPlay) {
 //write a function that randomly picks a 'bot' choice from
 //an array of options and returns it
 function getComputerPlay() {
-  var plays, play;
+  var plays = ["rock", "paper", "scissors"];
+  // var i = Math.floor (Math.random() * plays.length);
+  // var play = plays [i];
 
+  var randomPlayNumber = Math.floor()
 
   return play;
 }
@@ -48,9 +102,11 @@ function getComputerPlay() {
 function playRock() {
   play("rock");
 }
+
 function playPaper() {
   play("paper");
 }
+
 function playScissors() {
   play("scissors");
 }

@@ -107,13 +107,12 @@ footer>#company-name{
 }
 
 
-/*Create classes for large css changes
+/*Create classes for large css changes*/
 $("#container").css({background:"red",fontSize:"12px",color:"purple",boxShadow:"0 0 10px #ccc";})
-*/
 
-/*Goes to
+/*Goes to*/
 $("#container").addClass("container-style");
-*/
+
 .container-style{
      background:red;
      font-size:12px;

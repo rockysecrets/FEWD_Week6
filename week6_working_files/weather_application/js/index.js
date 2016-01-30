@@ -4,12 +4,21 @@ var breakpointCelsius = 20;
 //write a Celsius-Fahrenheit converter function
 //T(°F) = T(°C) × 1.8 + 32
 function convertToFahrenheit(celsius){
-
+return celsius * 1.8 + 32;
 }
 
 //write an image display function for hot or cold images
 //to update the #weatherImage in the HTML
 function updateImage(celsius){
+var imgSrc="";
+if (celsius >= breakpointCelsius){
+  imgSrc="images/cold.jpeg";
+}
+else if (celsius < breakpointCelsius){
+  imgSrc="images/hot.jpeg"
+}
+
+$(weatherImage).attr("src", imgSrc);
 
 }
 
@@ -17,6 +26,16 @@ function updateImage(celsius){
 //the message template should be:
 // "N°C (N°F). That's (hot OR cold)!"
 function updateResultMessage(celsius, fahrenheit){
+
+var htmlStr = celsius + "°C (" + fahrenheit + "°F. That's";
+if (celsius >= breakpointCelsius){
+htmlStr += "cold";
+}
+else if (celsius < breakpointCelsius){
+htmlStr += ("hot");
+}
+
+$("resultMessage").html(htmlStr);
 
 }
 
