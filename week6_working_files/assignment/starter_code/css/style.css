@@ -123,6 +123,10 @@ header {
   background: #fff600;
 }
 
+select{
+  font-size: 12px;
+}
+
 .nyc {
   background-image: url(../images/nyc.jpg)
 }
@@ -142,7 +146,3 @@ header {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
-
-
-
-

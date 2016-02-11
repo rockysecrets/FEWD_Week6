@@ -12,13 +12,13 @@ return celsius * 1.8 + 32;
 function updateImage(celsius){
 var imgSrc="";
 if (celsius >= breakpointCelsius){
-  imgSrc="images/cold.jpeg";
+  imgSrc="images/hot.jpeg";
 }
 else if (celsius < breakpointCelsius){
-  imgSrc="images/hot.jpeg"
+  imgSrc="images/cold.jpeg"
 }
 
-$(weatherImage).attr("src", imgSrc);
+$("#weatherImage").attr("src", imgSrc);
 
 }
 
@@ -27,20 +27,24 @@ $(weatherImage).attr("src", imgSrc);
 // "N°C (N°F). That's (hot OR cold)!"
 function updateResultMessage(celsius, fahrenheit){
 
-var htmlStr = celsius + "°C (" + fahrenheit + "°F. That's";
+var htmlStr = celsius + "°C (" + fahrenheit + "°F). That's";
 if (celsius >= breakpointCelsius){
-htmlStr += "cold";
+htmlStr += "hot!";
 }
 else if (celsius < breakpointCelsius){
-htmlStr += ("hot");
+htmlStr += "cold";
 }
 
-$("resultMessage").html(htmlStr);
+$("#resultMessage").html(htmlStr);
 
 }
 
 //write a click handler function for the submit button that brings everything together
 $("#submit").click(function(){
 
+  var celsius = parseFloat($("#temp").val());
+  var fahrenheit = convertToFahrenheit(celsius);
 
+  updateImage(celsius);
+  updateResultMessage(celsius, fahrenheit);
 });
